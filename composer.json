@@ -1,11 +1,15 @@
 {
     "name": "chenhaitang/php-simple-html-dom-parser",
     "description": "this is a php simple html dom parser repo for composer.",
+    "license": "MIT",
     "authors": [
         {
             "name": "chenhaitang",
             "email": "912998466@qq.com"
         }
     ],
+    "autoload": {
+        "psr-4": { "Rivsen\\Demo\\": "src" }
+    },
     "require": {}
 }
