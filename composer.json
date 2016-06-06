@@ -1,0 +1,11 @@
+{
+    "name": "trident/php-simple-html-dom-parser",
+    "description": "this is a php simple html dom parser repo for composer.",
+    "authors": [
+        {
+            "name": "chenhaitang",
+            "email": "912998466@qq.com"
+        }
+    ],
+    "require": {}
+}
