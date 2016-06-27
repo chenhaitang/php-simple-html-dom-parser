@@ -1,7 +1,7 @@
 php-simple-html-dom-parser
 ==========================
 
-Version 1.0.1
+Version 1.0
 
 Adaptation for Composer and PSR-4 of:
 
@@ -19,7 +19,7 @@ Install
  composer.phar
 ```json
 "require": {
-    "chenhaitang/php-simple-html-dom-parser": "1.0.1"
+    "chenhaitang/php-simple-html-dom-parser": "1.0"
     }
 ```
 
