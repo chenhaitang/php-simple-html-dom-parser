@@ -1,5 +1,5 @@
 <?php
-namespace Trident\htmlDom;
+namespace Trident\PhpSimple;
 
 require 'simple_html_dom.php';
 
