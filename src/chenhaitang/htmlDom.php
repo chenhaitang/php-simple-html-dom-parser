@@ -1,5 +1,5 @@
 <?php
-namespace chenhaitang\PhpSimple;
+namespace chenhaitang;
 
 require 'simple_html_dom.php';
 
