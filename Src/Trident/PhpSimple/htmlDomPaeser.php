@@ -1,7 +1,7 @@
 <?php
 namespace Trident\PhpSimple;
 
-require 'simple_html_dom.php';
+require 'simplehtmldom_1_0'.DIRECTORY_SEPARATOR.'simple_html_dom.php';
 
 class HtmlDomParser {
 	
