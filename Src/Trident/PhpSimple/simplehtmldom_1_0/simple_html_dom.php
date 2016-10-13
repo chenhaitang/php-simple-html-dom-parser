@@ -62,7 +62,7 @@ define('HDOM_INFO_ENDSPACE',7);
 define('DEFAULT_TARGET_CHARSET', 'UTF-8');
 define('DEFAULT_BR_TEXT', "\r\n");
 define('DEFAULT_SPAN_TEXT', " ");
-define('MAX_FILE_SIZE', 600000);
+define('MAX_FILE_SIZE', 6000000);
 // helper functions
 // -----------------------------------------------------------------------------
 // get html dom from file
@@ -76,7 +76,7 @@ function file_get_html($url, $use_include_path = false, $context=null, $offset =
 
     $url = str_replace( "&amp;", "&", urldecode(trim($url)) );
 	$javascript_loop = 0;
-    $timeout = 5;
+    $timeout = 20;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; rv:1.7.3) Gecko/20041001 Firefox/0.10.1");
     curl_setopt($ch, CURLOPT_URL, $url);
