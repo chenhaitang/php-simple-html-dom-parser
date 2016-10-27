@@ -67,7 +67,7 @@ define('MAX_FILE_SIZE', 6000000);
 // -----------------------------------------------------------------------------
 // get html dom from file
 // $maxlen is defined in the code as PHP_STREAM_COPY_ALL which is defined as -1.
-function file_get_html($url, $use_include_path = false, $context=null, $offset = -1, $maxLen=-1, $lowercase = true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
+function file_get_html($url, $cookie = null, $use_include_path = false, $context=null, $offset = -1, $maxLen=-1, $lowercase = true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
 {
     // We DO force the tags to be terminated.
     $dom = new simple_html_dom(null, $lowercase, $forceTagsClosed, $target_charset, $stripRN, $defaultBRText, $defaultSpanText);
@@ -75,11 +75,13 @@ function file_get_html($url, $use_include_path = false, $context=null, $offset =
     //$contents = file_get_contents($url, $use_include_path, $context, $offset);
 
     $url = str_replace( "&amp;", "&", urldecode(trim($url)) );
-	$javascript_loop = 0;
     $timeout = 20;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; rv:1.7.3) Gecko/20041001 Firefox/0.10.1");
     curl_setopt($ch, CURLOPT_URL, $url);
+    if (!empty($cookie)) {
+        curl_setopt ($ch, CURLOPT_COOKIE, $cookie);
+    }
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true );
     curl_setopt($ch, CURLOPT_ENCODING, "");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
